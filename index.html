@@ -36,7 +36,7 @@
   <br>
 
   <!-- Add a div to give the map somewhere to go -->
-    <div id='map'></div>
+    <div id='mapID'></div>
     <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
     <div class='map-overlay' id='legend'></div>
   
@@ -46,7 +46,7 @@
     
     // Create a variable called "map" to house your mao
       var map = new mapboxgl.Map({
-        container: 'map', // container id
+        container: 'mapID', // container id
         style: 'mapbox://styles/eevenden/cknqe7nrf1bad17oyo4bwegc1', // replace this with your style URL
         center: [-122.420790, 37.754700],
         zoom: 8
