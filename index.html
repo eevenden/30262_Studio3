@@ -4,9 +4,9 @@
 <head>
   <title>Studio Week 3</title>
   <!-- Add Mapbox GL JS JavaScript file -->
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
   <!-- Add in the Mapbox GL JS CSS file -->
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
     <!-- Add styling info for the map -->
     <!-- Set the map's width: 800px and height: 600px in a `style` tag -->
   <style>
@@ -37,7 +37,7 @@
   <br>
 
   <!-- Add a div to give the map somewhere to go -->
-    <div id='mapId'></div>
+    <div id='map'></div>
     <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
     <div class='map-overlay' id='legend'><p>Legend</p></div>
   
@@ -47,48 +47,9 @@
     
     // Create a variable called "map" to house your mao
       var map = new mapboxgl.Map({
-        container: 'mapId', // container id
-        style: 'mapbox://styles/eevenden/cknqe7nrf1bad17oyo4bwegc1', // replace this with your style URL
-        center: [-122.420790, 37.754700],
-        zoom: 8
+        container: 'map', // container id
+        style: 'mapbox://styles/eevenden/cknqe7nrf1bad17oyo4bwegc1' // replace this with your style URL
       });
-    
-      map.on('load', function() {
-        var layers = ['0-10', '10-20', '20-50', '50-100', '100-200', '200-500', '500-1000', '1000+'];
-        var colors = ['#FFEDA0', '#FED976', '#FEB24C', '#FD8D3C', '#FC4E2A', '#E31A1C', '#BD0026', '#800026'];
-    
-    // Add a legend
-        for (i=0; i < layers.length, i++) {
-          var layer = layers[i];
-          var color = colors[i]; 
-          var item = document.createElement('div');
-          var key = document.createElement('span');
-          key.className = 'legend-key';
-          key.style.backgroundColor = color; 
-          var value = document.createElement('span');
-          value.innerHTML = layer;
-          item.appendChild(key);
-          item.appendChild(value);
-          legend.appendChild(item);
-        }
-    // Add the information window
-        map.on('mousemove', function(e) {
-          var states = map.queryRenderedFeatures(e.point, {
-            layers: ['statedata']
-          });
-      
-          if (states.length > 0) {
-            document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + '</strong></h3><p><strong><em>' + states[0].properties.density + '</strong> people per square mile </em></p>';
-          } else {
-            document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
-          }
-        });
-        
-        map.getCanvas().style.cursor = 'default';
-        
-        map.fitBounds([[-133.2421875, 16.972741], [-47.63671875, 52.696361]]);
-        
-    });
     
     </script>
 </body>
