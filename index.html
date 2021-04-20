@@ -7,10 +7,18 @@
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
   <!-- Add in the Mapbox GL JS CSS file -->
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
-  <!-- Add CSS styling info for the map -->
-  <style type="text/css">
-
-
+    <!-- Set the map's width: 800px and height: 600px in a `style` tag -->
+  <style>
+    body {
+      margin: 1;
+      padding: 1;
+    }
+    #mapId {
+      position: absolute;
+      height: 600px;
+      width: 100%;
+    }
+    
   </style>
   <!-- Adding styling info for page layout by reading in a CSS file -->
   <link rel="stylesheet" href="styles.css">
