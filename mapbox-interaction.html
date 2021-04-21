@@ -49,6 +49,10 @@
     });
 
     // Add a popup: https://docs.mapbox.com/mapbox-gl-js/example/popup/
+    var popup = new mapboxgl.Popup()
+    .setLngLat([-96, 37.8])
+    .setHTML('<h1>Hello World!</h1>')
+    .addTo(map);
 
     // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol
 
