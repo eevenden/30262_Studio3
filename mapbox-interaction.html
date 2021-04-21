@@ -50,11 +50,13 @@
         zoom: 11 // starting zoom
       });
 
-    // Add a popup: https://docs.mapbox.com/mapbox-gl-js/example/popup/ & // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol
-      var popup = new mapboxgl.Popup({ closeOnClick: false })
+    // Add a popup: https://docs.mapbox.com/mapbox-gl-js/example/popup/ 
+      var popup = new mapboxgl.Popup({closeOnClick: false})
+      .setLngLat([-122.44, 37.76])
       .setHTML("<b>Poppin off</b>")
       .addTo(map);
     
+    // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol
       map.dragPan.enable();
       map.boxZoom.enable();
     
