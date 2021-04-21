@@ -51,13 +51,12 @@
     });
 
     // Add a popup: https://docs.mapbox.com/mapbox-gl-js/example/popup/ & // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol
-    var popup = new mapboxgl.Popup()
-    .setLngLat([-96, 37.8])
-    .setHTML('<h1> Poppin off </h1>')
+    var popup = new mapboxgl.Popup({ closeOnClick: false })
+    .setHTML("<b>Poppin off</b>")
     .addTo(map);
     
-    map.dragPan();
-    map.boxZoom();
+    map.dragPan.enable();
+    map.boxZoom.enable();
 
     // Add a function that flies to a location: https://docs.mapbox.com/mapbox-gl-js/api/#map#flyto
     map.flyTo({
