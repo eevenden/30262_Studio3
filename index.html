@@ -47,6 +47,7 @@
       // set map bounds to the continental US
       map.fitBounds([[-133.2421875, 16.972741], [-47.63671875, 52.696361]]);
       
+      // make list of legend values
       var layers = ['0-10', 
                     '10-20', 
                     '20-50', 
@@ -64,6 +65,7 @@
                     '#BD0026', 
                     '#800026'];
       
+      // join the two lists in a panel
       for (i = 0; i < layers.length; i++) {
         var layer = layers[i];
         var color = colors[i];
@@ -78,6 +80,7 @@
         legend.appendChild(item);
       }
       
+      // Write function for mouse movement over the states - updates information in the panel. 
       map.on('mousemove', function(e) {
         var states = map.queryRenderedFeatures(e.point, {
           layers: ['statedata']
