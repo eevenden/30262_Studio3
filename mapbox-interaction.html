@@ -43,20 +43,20 @@
 
     // Initialize the map
     mapboxgl.accessToken = 'pk.eyJ1IjoiZWV2ZW5kZW4iLCJhIjoiY2tsaWV4ZjgxMDZ5bTJwbHlud2ZpbmdrayJ9.YncVdwMOnwOqwF24Pm5ZhA';
-    var map = new mapboxgl.Map({
-      container: 'map', // container id
-      style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-      center: [-122.44, 37.76], // starting position [lng, lat]
-      zoom: 11 // starting zoom
-    });
+      var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [-122.44, 37.76], // starting position [lng, lat]
+        zoom: 11 // starting zoom
+      });
 
     // Add a popup: https://docs.mapbox.com/mapbox-gl-js/example/popup/ & // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol
-    var popup = new mapboxgl.Popup({ closeOnClick: false })
-    .setHTML("<b>Poppin off</b>")
-    .addTo(map);
+      var popup = new mapboxgl.Popup({ closeOnClick: false })
+      .setHTML("<b>Poppin off</b>")
+      .addTo(map);
     
-    map.dragPan.enable();
-    map.boxZoom.enable();
+      map.dragPan.enable();
+      map.boxZoom.enable();
     
     </script>
 
